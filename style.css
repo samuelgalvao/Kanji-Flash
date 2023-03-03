@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'My Custom Font';
+    src: url('/midia/Fonts/Japan\ wave.ttf') format('truetype');
+    /* add other variations if needed */
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root{
+    --black: #404040;
+    --white: #F2F2F2;
+    --redDark: #8C0303;
+    --red: #BF1304;
+    --redLight: #D96F66;
+}
+.body{
+    font-family: 'Montserrat', sans-serif;
+}
+.card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+}
+  
+  .card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s ease;
+    border-radius: 10px;
+  }
+  
+  .card-front {
+    background-color: #eaeaea;
+  }
+  
+  .card-back {
+    transform: rotateY(180deg);
+    background-color: #ccc;
+  }
+  
+  .card.flipped .card-front {
+    transform: rotateY(180deg);
+  }
+  
+  .card.flipped .card-back {
+    transform: rotateY(0deg);
+  }
+  
+  button#flip-card {
+    margin-top: 20px;
+  }
+  
