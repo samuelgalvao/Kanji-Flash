@@ -11,18 +11,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    
 </head>
 <body>
-    <div class="container">
+    <header>
+      <h1>Kanji Flash</h1>
+      <nav>
+        <ul>
+          <li>Help</li>
+          <li>About</li>
+          <li>GitHub</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="cardPlace">
         <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">
-              <h3>Front of Card</h3>
-            </div>
-            <div class="card-face card-back">
-              <h3>Back of Card</h3>
-            </div>
+          <div class="card-face card-front">
+            <h3>Front of Card</h3>
+            <div class="kanji front"></div>
+          </div>
+          <div class="card-face card-back">
+            <h3>Back of Card</h3>
+            <div class="kanji back"></div>
+          </div>
         </div>
       </div>
-    </div>
-      
+      <div class="examplesPlace">
+        <h2>Examples</h2>
+        <div class="example v1"></div>
+        <div class="example v2"></div>
+        <div class="example v3"></div>
+      </div>
+      <div class="buttonsPlace">
+        <div class="button back">
+          BACK
+        </div>
+        <div class="button next">
+          NEXT
+        </div>
+        
+      </div>
+    </main>
     <script src="index.js"></script>
 </body>
 </html>
