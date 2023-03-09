@@ -80,6 +80,15 @@ main{
 .examplesPlace{
   grid-area: exam;
 }
+.examplesPlace h2{
+  margin-bottom: 1%;
+}
+.example{
+  margin: 2px 0px;
+}
+.example p{
+  display: inline;
+}
 .buttonsPlace{
   grid-area: buttons;
 }
@@ -107,6 +116,28 @@ main{
   width: 80%;
   height: 80%;
 }
+.kanji.back{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.backinfo{
+  font-weight: 400;
+  text-align: center;
+  font-style: italic;
+}
+#meaningPlace{
+  width: 100%;
+  font: bold 3em 'montserrat', sans-serif;
+}
+
+#kanjiImage{
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 .button{
   display: inline-block;
   border-radius: 20px;
@@ -124,7 +155,20 @@ main{
   transform: scale(1.05);
   transition: 0.5s;
 }
-  
+.btn{
+  display: inline-block;
+  background-color: var(--redLight);
+  border: none;
+  padding: 5px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .5s;
+}
+.meanEle{
+  font-weight: 500;
+  font-style: italic;
+}
 .card-front {
     background-color: #eaeaea;
 }
@@ -132,6 +176,8 @@ main{
 .card-back {
     transform: rotateY(180deg);
     background-color: #ccc;
+    align-items: center;
+    justify-content: center;
 }
   
 .card.flipped .card-front {
@@ -142,9 +188,10 @@ main{
     transform: rotateY(0deg);
 }
   
-  button#flip-card {
-    margin-top: 20px;
-  }
+button#flip-card {
+  margin-top: 20px;
+}
+
   @media screen and (max-width: 767px) {
     .main-content {
       max-width: 100%;
@@ -196,7 +243,7 @@ main{
     
   }
   
-  @media screen and (min-width: 992px) {
+@media screen and (min-width: 992px) {
     h1 {
       font-size: 64px;
     }
@@ -210,4 +257,4 @@ main{
       height: 90vh;
     }
     
-  }
+}

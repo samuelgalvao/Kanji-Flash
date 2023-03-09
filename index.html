@@ -24,21 +24,23 @@
     <main>
       <div class="cardPlace">
         <div class="card" onclick="flipCard(this)">
-          <div class="card-face card-front">
-            <h3>Front of Card</h3>
-            <div class="kanji front"></div>
+          <div class="card-face card-front" >
+            <div class="kanji front">
+              <img id="kanjiImage">
+            </div>
           </div>
           <div class="card-face card-back">
-            <h3>Back of Card</h3>
-            <div class="kanji back"></div>
+            <h2>Meaning</h2>
+            <div class="kanji back">
+              <div class="backinfo" id="meaningPlace"></div>
+              <div class="backinfo" id="romajiPlace"></div>
+              <div class="backinfo" id="katakanaPlace"></div>
+            </div>
           </div>
         </div>
       </div>
       <div class="examplesPlace">
         <h2>Examples</h2>
-        <div class="example v1"></div>
-        <div class="example v2"></div>
-        <div class="example v3"></div>
       </div>
       <div class="buttonsPlace">
         <div class="button back">
