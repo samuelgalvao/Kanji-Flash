@@ -129,8 +129,9 @@ main{
   font-style: italic;
 }
 #meaningPlace{
+  height: 40%;
   width: 100%;
-  font: bold 3em 'montserrat', sans-serif;
+  font: bold 5vh 'montserrat', sans-serif;
 }
 
 #kanjiImage{
