@@ -1,6 +1,10 @@
 const url = 'https://kanjialive-api.p.rapidapi.com/api/public/kanji/all'
 const Kanjis = []
+const main = document.getElementById('main')
 
+if (main){
+  createCard(main)
+}
 
 
 function getData(url) {
@@ -21,6 +25,7 @@ function handleData(data) {
   var num = Math.floor(Math.random() * 1200) 
   const randomKanji = data[num]
   Kanjis.push(randomKanji)
+  console.log(Kanjis)
   executeData(randomKanji)
 }
 function executeData(data){
@@ -43,15 +48,17 @@ function flipCard(card){
   
   card.classList.toggle('flipped')
 }
-function addButtons(arr) {
+function addButtons() {
 
-  const buttonsPlace = document.querySelector('.buttonsPlace');
-  buttonsPlace = null
+  var buttonsPlace = document.querySelector('.buttonsPlace');
+  buttonsPlace.replaceChildren()
   
-  const backButton = document.createElement('div');
+  const backButton = document.createElement('a');
   backButton.classList.add('button', 'back');
-  backButton.textContent = 'BACK';
-  backButton.onclick = backCard; // assign the backCard function as the onclick handler
+  backButton.textContent = 'KANJIS';
+  
+  backButton.href = 'kanjis-page.html'
+  backButton.target = "_blank"
   
   const nextButton = document.createElement('div');
   nextButton.classList.add('button', 'next');
@@ -119,10 +126,60 @@ function addMeaning(meaning, romaji, katakana){
 function nextCard(){
   getData(url).then(handleData);
 }
-function backCard(){
-  if (Kanjis.length < 2){
-    alert('ERROR')
-  }else{
-    console.log(Kanjis)
-  }
+function createCard(root) {
+  // Create card elements
+  const cardPlace = document.createElement('div');
+  cardPlace.classList.add('cardPlace');
+
+  const card = document.createElement('div');
+  card.classList.add('card');
+  card.addEventListener('click', flipCard.bind(this, card));
+
+  const cardFront = document.createElement('div');
+  cardFront.classList.add('card-face', 'card-front');
+
+  const kanjiFront = document.createElement('div');
+  kanjiFront.classList.add('kanji', 'front');
+
+  const kanjiImage = document.createElement('img');
+  kanjiImage.id = 'kanjiImage';
+
+  const cardBack = document.createElement('div');
+  cardBack.classList.add('card-face', 'card-back');
+
+  const meaningHeader = document.createElement('h2');
+  meaningHeader.textContent = 'Meaning';
+
+  const kanjiBack = document.createElement('div');
+  kanjiBack.classList.add('kanji', 'back');
+
+  const meaningPlace = document.createElement('div');
+  meaningPlace.classList.add('backinfo');
+  meaningPlace.id = 'meaningPlace';
+
+  const romajiPlace = document.createElement('div');
+  romajiPlace.classList.add('backinfo');
+  romajiPlace.id = 'romajiPlace';
+
+  const katakanaPlace = document.createElement('div');
+  katakanaPlace.classList.add('backinfo');
+  katakanaPlace.id = 'katakanaPlace';
+
+  // Append elements to card
+  cardFront.appendChild(kanjiFront);
+  kanjiFront.appendChild(kanjiImage);
+  cardBack.appendChild(meaningHeader);
+  cardBack.appendChild(kanjiBack);
+  kanjiBack.appendChild(meaningPlace);
+  kanjiBack.appendChild(romajiPlace);
+  kanjiBack.appendChild(katakanaPlace);
+
+  card.appendChild(cardFront);
+  card.appendChild(cardBack);
+
+  cardPlace.appendChild(card);
+  root.appendChild(cardPlace)
+}
+
+function createKanjisList(){
 }

@@ -20,7 +20,10 @@
 body{
     font-family: 'Montserrat', sans-serif;
 }
-
+a{
+  text-decoration: none;
+  color: inherit;
+}
 header{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -90,6 +93,9 @@ main{
   display: inline;
 }
 .buttonsPlace{
+  display: flex;
+  align-items: center;
+  gap: 1%;
   grid-area: buttons;
 }
 
@@ -211,6 +217,8 @@ button#flip-card {
       height: 80vh;
     }
     .cardPlace{
+      position: relative;
+      z-index: 999;
       margin-bottom: 4vh;
 
     }
