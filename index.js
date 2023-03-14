@@ -4,6 +4,7 @@ const main = document.getElementById('main')
 
 if (main){
   createCard(main)
+  createConts(main)
 }
 
 
@@ -53,19 +54,11 @@ function addButtons() {
   var buttonsPlace = document.querySelector('.buttonsPlace');
   buttonsPlace.replaceChildren()
   
-  const backButton = document.createElement('a');
-  backButton.classList.add('button', 'back');
-  backButton.textContent = 'KANJIS';
-  
-  backButton.href = 'kanjis-page.html'
-  backButton.target = "_blank"
-  
   const nextButton = document.createElement('div');
   nextButton.classList.add('button', 'next');
   nextButton.textContent = 'NEXT';
   nextButton.onclick = nextCard; // assign the nextCard function as the onclick handler
 
-  buttonsPlace.appendChild(backButton);
   buttonsPlace.appendChild(nextButton);
 }
 
@@ -181,5 +174,13 @@ function createCard(root) {
   root.appendChild(cardPlace)
 }
 
-function createKanjisList(){
+function createConts(place){
+  const examples = document.createElement('div')
+  examples.classList.add('examplesPlace')
+
+  const buttons = document.createElement('div')
+  buttons.classList.add('buttonsPlace')
+
+  place.appendChild(examples)
+  place.appendChild(buttons)
 }
