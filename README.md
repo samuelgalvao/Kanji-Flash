@@ -9,12 +9,6 @@ A language-learning tool designed to help users master the Japanese language.
 - Track progress and test knowledge through interactive quizzes.
 - Personalized study plans and spaced repetition techniques for efficient learning.
 
-## Getting Started
-
-1. Install the app on your device.
-2. Create a new deck or import an existing one.
-3. Start studying and track your progress.
-
 ## Contribution
 
 This app is open-source and contributions are welcome. If you would like to contribute, please follow these steps:
