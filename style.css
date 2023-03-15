@@ -33,7 +33,7 @@ header{
   
 }
 header h1{
-  font-family: 'Japan font';
+  font-family: 'Japan font', 'Carter One';
   margin-left: 10%;
   cursor: default;
 }
@@ -282,7 +282,7 @@ button#flip-card {
   flex-direction: column;
   gap: 10px;
 
-  width: 70%;
+  width: 80%;
 }
 .about{
   text-align: center;
